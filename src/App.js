@@ -1,14 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
+import RenderInput from "./RenderInput";
+import FrameworkList from "./FrameworkList";
+import MockServer from "./MockServer";
+import Redux from "./Redux";
+import ReduxAsync from "./ReduxAsync";
+import CustomHooks from "./CustomHooks";
+import ClickRender from "./ClickRender";
 
 function App() {
+  const data = [
+    {
+      id: 1,
+      item: "React",
+    },
+    {
+      id: 2,
+      item: "Angular",
+    },
+    {
+      id: 3,
+      item: "Vue",
+    },
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
+        <RenderInput outputConsole={console.log} />
+        <FrameworkList frameworks={data} />
+        {/* <FrameworkList /> */}
+        <MockServer />
+        <Redux />
+        <ReduxAsync />
+        <CustomHooks />
+        <ClickRender />
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
